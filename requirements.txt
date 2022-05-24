@@ -1,0 +1,27 @@
+React-Native Setup Instructions (obtained from capstone setup):
+Have chocolatey and Node.js
+npm install --global create-react-native-app
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm install --global expo-cli
+npm install --force
+npm install --global @react-navigation/native
+npm install --global react-navigation
+npm install @react-navigation/native-stack
+npm install react-native-screens react-native-safe-area-context (not sure if works)
+expo install react-native-screens react-native-safe-area-context
+
+
+To Setup A New Expo Project:
+cd to project folder (may have to reopen PS not as admin)
+create-react-native-app MyReactNativeApp
+##Following must be run once per time PowerShell is opened:##
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+
+To Run the App:
+expo start
+
+
+May need:
+npm install --global @react-navigation/native
+Yarn
