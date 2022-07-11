@@ -33,6 +33,11 @@ target 'PeerMentorApp' do
   #   use_flipper!()
   # end
 
+  
+
+  pod 'React', :path => '../node_modules/react-native'
+  pod 'react-native-sqlite-storage', :path => '../node_modules/react-native-sqlite-storage'
+
   post_install do |installer|
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
