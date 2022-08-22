@@ -7,9 +7,13 @@ npm install --force
 npm install --global @react-navigation/native
 npm install --global react-navigation
 npm install @react-navigation/native-stack
-npm install react-native-screens react-native-safe-area-context (not sure if works)
-expo install react-native-screens react-native-safe-area-context
+expo install expo-asset
+expo install expo-sqlite
 
+
+##NAVIGATION
+expo install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack
 
 To Setup A New Expo Project:
 cd to project folder (may have to reopen PS not as admin)
@@ -25,3 +29,7 @@ expo start
 May need:
 npm install --global @react-navigation/native
 Yarn
+
+
+SQLite.enablePromise(true)
+npm install -g react-native-cli
