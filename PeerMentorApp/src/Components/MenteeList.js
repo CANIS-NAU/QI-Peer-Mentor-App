@@ -5,18 +5,18 @@ import { getMentees, getUserMoodReports, getAsyncItem } from '../Functions/Async
 
 export default function MenteeList( {navigation} ) {
 
-  const [currentUser, setCurrentUser] = useState([]);
-  const [mentees, setMentees] = React.useState([])
-  const [searchMentees, setSearchMentees] = React.useState([])
+  const [currentUser, setCurrentUser] = useState({});
+  const [mentees, setMentees] = useState([]);
+  const [searchMentees, setSearchMentees] = useState([]);
 
   useEffect(() => {
     getAsyncItem("current user").then(async user => {
       setCurrentUser(user)
-    })
-    console.log(`currentUser username: ${currentUser.username}`)
-    getMentees(currentUser.username).then(result => {
-      setMentees(result)
-      setSearchMentees(result)
+      //console.log(`currentUser user_name: ${user.user_name}`)
+      getMentees(user.user_id).then(result => {
+        setMentees(result)
+        setSearchMentees(result)
+      })
     })
   }, []);
 
@@ -27,7 +27,8 @@ export default function MenteeList( {navigation} ) {
     else{
       let queryMentees = []
       for (let mentee of mentees){
-        if (mentee.user_name.toLowerCase().includes(query.toLowerCase())){
+        let fullName = mentee.first_name + ' ' + mentee.last_name;
+        if (fullName.toLowerCase().includes(query.toLowerCase())){
           queryMentees.push(mentee)
         }
       }
@@ -38,9 +39,9 @@ export default function MenteeList( {navigation} ) {
   const MenteeItem = ({mentee}) => (
     <View style={styles.homescreenmenteelist}>
         <Pressable style={styles.homescreenmentee}
-                            onPress={() => navigation.navigate("Mentee Profile", {screenname: mentee.user_name, currentUser: currentUser, mentee: mentee})}>
+                            onPress={() => navigation.navigate("Mentee Profile", {screenname: `${mentee.first_name} ${mentee.last_name}`, mentee: mentee})}>
             <View style={styles.homescreenmentee}>
-                <Text>{mentee.user_name}</Text>
+                <Text>{mentee.first_name} {mentee.last_name}</Text>
             </View>
         </Pressable>
     </View>

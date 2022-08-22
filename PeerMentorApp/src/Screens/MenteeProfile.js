@@ -3,10 +3,11 @@ import { StyleSheet, View, Text, Button, Pressable, Image, TextInput, FlatList, 
 import {styles} from '../stylesheet';
 import MenteeInfoBox from '../Components/MenteeInfoBox';
 import MenteeMoodReports from '../Components/MenteeMoodReports';
+import { getMentees, getUserMoodReports, getAsyncItem } from '../Functions/AsyncDatabase';
 
 // Class to retreive mentee mood report and user info data from the ARORA server.
 export default function MenteeProfile({navigation, route}){
-
+    const { mentee, mentor } = route.params;
     const [currentUser, setCurrentUser] = useState([]);
 
     // TO DO: implement system to regularly call to fetch new data, create userobject on login for parameters
@@ -18,9 +19,8 @@ export default function MenteeProfile({navigation, route}){
 
     return(
         <View>
-            <Text>Mentee Screen</Text>
-            <MenteeInfoBox currentUser={currentUser} mentee={mentee}></MenteeInfoBox>
-            <MenteeMoodReports currentUser={currentUser} mentee={mentee}></MenteeMoodReports>
+            <MenteeInfoBox navigation={navigation} mentee={mentee} mentor={mentor}></MenteeInfoBox>
+            <MenteeMoodReports mentee={mentee}></MenteeMoodReports>
         </View>
     )
 }

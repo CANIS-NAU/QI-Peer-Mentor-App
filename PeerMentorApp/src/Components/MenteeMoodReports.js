@@ -25,10 +25,10 @@ export default function MenteeMoodReports({navigation, mentee}){
         }
         else{
             let queryMoodReports = []
-            for (let moodreport of mentee.moodreports ){
-                if (moodreport.date.includes(query) 
-                    || moodreport.mood.toLowerCase().includes(query.toLowerCase())
-                    || moodreport.stresslevel.toLowerCase().includes(query.toLowerCase())){
+            for (let moodreport of moodreports ){
+                if (JSON.stringify(moodreport.mood_report_created_at).includes(query) 
+                    || moodreport.q1_response.includes(query.toLowerCase())
+                    || moodreport.q2_response.includes(query.toLowerCase())){
                 queryMoodReports.push(moodreport)
                 }
             }

@@ -5,6 +5,8 @@ import { StyleSheet, View, Text, Button, Pressable, Image, TextInput, Divider } 
 export default function ChangeEmail({ navigation }) {
   const [email, emailText] = React.useState('');
 
+    // TO DO: security questions instead of recovery email as an idea
+    //        integrate changeEmail async call
   return (
     <View style={styles.screen}>
 

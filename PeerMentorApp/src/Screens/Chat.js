@@ -12,11 +12,12 @@ export default function Chat( {navigation} ) {
   useEffect(() => {
     getAsyncItem("current user").then(async user => {
       setCurrentUser(user)
+
+      getMentees(user.user_name).then(results => {
+        setMentees(results)
+      })
     })
-    getMentees(username).then(results => {
-      setMentees(results)
-    
-    })}, []);
+  }, []);
 
   return(
     <View style={styles.screen}>

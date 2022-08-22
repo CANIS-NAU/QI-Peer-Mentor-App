@@ -2,81 +2,165 @@
 // async key: "access codes"
 export const accessCodesExample = [
   {
-    code: "12345",
-    authority: "mentor",
-    createdBy: "admin" // username of mentor/supervisor who created
+    access_code: null,
+    creator_id: null,
+    created_at: null,
+    expired_at: null,
+    authority_level: null,
   }
 ]
 
-// async key: "mentees"
-export const menteeDataExample = [
+// async key: "users"
+export const userDataExample = [
   {
-    last_login: null,
-    username: "danielsanchez",
-    first_name: "Daniel",
-    last_name: "Sanchez",
-    is_staff: false,
-    is_active: false,
-    date_joined: null,
-    UserInfoId: null,
-    UserCurrentMoodUpdated: null,
-    UserCreatedAt: null,
-    UserId: 1,
-    email: "danielsanchez@gmail.com"
+    user_info_id: 1,
+    user_current_mood_updated: "1979-12-31T00:00:00Z",
+    user_current_mood: 0,
+    user_id: -1,
+    user_name: "supervisor",
+    password: "supervisor",
+    first_name: "The",
+    last_name: "Supervisor",
+    email: "supervisor@nau.edu",
+    mentor_id: null,
+    user_b0_count: 0,
+    user_b1_count: 0,
+    user_b2_count: 0,
+    user_b3_count: 0,
+    user_b4_count: 0,
+    user_current_butterfly: 0,
+    user_pollen: 0
+},
+  {
+      user_info_id: 1,
+      user_current_mood_updated: "1979-12-31T00:00:00Z",
+      user_current_mood: 0,
+      user_id: 2147483648,
+      user_name: "amh999",
+      password: "amh999",
+      first_name: "Ashleea",
+      last_name: "Holloway",
+      email: "amh999@nau.edu",
+      mentor_id: -1,
+      user_b0_count: 0,
+      user_b1_count: 0,
+      user_b2_count: 0,
+      user_b3_count: 0,
+      user_b4_count: 0,
+      user_current_butterfly: 0,
+      user_pollen: 0
   },
   {
-    last_login: null,
-    username: "emiliaclark",
-    first_name: "Emilia",
-    last_name: "Clark",
-    is_staff: false,
-    is_active: true,
-    date_joined: null,
-    UserInfoId: 2,
-    UserCurrentMoodUpdated: null,
-    UserCreatedAt: null,
-    UserId: 2,
-    email: "emiliaclark@gmail.com"
+      user_info_id: 2,
+      user_current_mood_updated: "1979-12-31T00:00:00Z",
+      user_current_mood: 0,
+      user_id: 2,
+      user_name: "ameliafoster",
+      password: "amelia",
+      first_name: "Amelia",
+      last_name: "Foster",
+      email: "af82@nau.edu",
+      mentor_id: 2147483648,
+      user_b0_count: 0,
+      user_b1_count: 0,
+      user_b2_count: 0,
+      user_b3_count: 0,
+      user_b4_count: 0,
+      user_current_butterfly: 0,
+      user_pollen: 0
   },
   {
-    last_login: null,
-    username: "jeremysmith",
-    first_name: "Jeremy",
-    last_name: "Smith",
-    is_staff: false,
-    is_active: true,
-    date_joined: null,
-    UserInfoId: 3,
-    UserCurrentMoodUpdated: null,
-    UserCreatedAt: null,
-    UserId: null,
-    email: "jeremysmith@gmail.com"
+      user_info_id: 4,
+      user_current_mood_updated: "1979-12-31T00:00:00Z",
+      user_current_mood: 0,
+      user_id: 3,
+      user_name: "adamheart",
+      password: "adamheart",
+      first_name: "Adam",
+      last_name: "Heart",
+      email: "ah876@nau.edu",
+      mentor_id: 2147483648,
+      user_b0_count: 0,
+      user_b1_count: 0,
+      user_b2_count: 0,
+      user_b3_count: 0,
+      user_b4_count: 0,
+      user_current_butterfly: 0,
+      user_pollen: 0
   },
-]
-
-// async key: "mentors"
-export const mentorDataExample = [
   {
-    userId: 1,
-    firstname: "Ashleea",
-    lastname: "Holloway",
-    username: "ashleea",
-    password: "ashleea",
-    email: "amh999@nau.edu",
-    authority: "mentor",
-    menteeIds: [1, 2, 3],
+      user_info_id: 5,
+      user_current_mood_updated: "1979-12-31T00:00:00Z",
+      user_current_mood: 0,
+      user_id: 4,
+      user_name: "angelasmith",
+      password: "angelasmith",
+      first_name: "Angela",
+      last_name: "Smith",
+      email: "as900@nau.edu",
+      mentor_id: 2147483648,
+      user_b0_count: 0,
+      user_b1_count: 0,
+      user_b2_count: 0,
+      user_b3_count: 0,
+      user_b4_count: 0,
+      user_current_butterfly: 0,
+      user_pollen: 0
   }
 ]
+
 
 // async key: "mood reports"
-export const moodReportData = [
+export const moodReportsExample = [
   {
-    MoodReportId: null,
-    MoodReportCreatedAt: null,
-    Q1MoodResponse: null,
-    Q2MoodResponse: null,
-    UserId: null,
-  }
+    mood_report_created_at: new Date(),
+    mood_report_id: 1,
+    q1_response: 1,
+    q2_response: 1,
+    user_id: 2,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 2,
+    q1_response: 2,
+    q2_response: 2,
+    user_id: 2,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 3,
+    q1_response: 1,
+    q2_response: 1,
+    user_id: 3,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 4,
+    q1_response: 2,
+    q2_response: 1,
+    user_id: 3,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 5,
+    q1_response: 1,
+    q2_response: 2,
+    user_id: 3,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 6,
+    q1_response: 2,
+    q2_response: 2,
+    user_id: 4,
+  },
+  {
+    mood_report_created_at: new Date(),
+    mood_report_id: 7,
+    q1_response: 2,
+    q2_response: 2,
+    user_id: 4,
+  },
 ]
 
 // async key: "mentee flags"
@@ -88,11 +172,53 @@ export const menteeFlags = [
   }
 ]
 
+// TO DO: change parameters to be correct when pulling and sending data to server
 // async key: "chat messages"
-export const chatMessages = [
+export const chatMessagesExample = [
   {
-    convoId: null,
-    messages: [],
+    message_id: 1,
+    convo_id: 1,
+    message_text: "Hello!", // message_text when sending to the server
+    message_date: new Date(),
+    message_sender_id: 2147483648,
+    message_reciver_id: 2,
+    sender_name: 'amh999',
+  },
+  {
+    message_id: 2,
+    convo_id: 1,
+    message_text: "How are you?",
+    message_date: new Date(),
+    message_sender_id: 2147483648,
+    message_reciver_id: 2,
+    sender_name: 'amh999',
+  },
+  {
+    message_id: 3,
+    convo_id: 1,
+    message_text: "I'm good.",
+    message_date: new Date(),
+    message_sender_id: 2,
+    message_reciver_id: 2147483648,
+    sender_name: 'ameliafoster',
+  },
+  {
+    message_id: 4,
+    convo_id: 2,
+    message_text: "I have a question",
+    message_date: new Date(),
+    message_sender_id: 3,
+    message_reciver_id: 2147483648,
+    sender_name: 'adamheart',
+  },
+  {
+    message_id: 5,
+    convo_id: 3,
+    message_text: "I'm in need of some guidance",
+    message_date: new Date(),
+    message_sender_id: 4,
+    message_reciver_id: 2147483648,
+    sender_name: 'angelasmith',
   }
 ]
 

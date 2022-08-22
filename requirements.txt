@@ -9,7 +9,11 @@ npm install --global react-navigation
 npm install @react-navigation/native-stack
 expo install expo-asset
 expo install expo-sqlite
+npm i react-native-offline
+npm i @react-native-community/netinfo
 
+# extra step for iOS
+$ (cd ios && pod install)
 
 ##NAVIGATION
 expo install react-native-screens react-native-safe-area-context

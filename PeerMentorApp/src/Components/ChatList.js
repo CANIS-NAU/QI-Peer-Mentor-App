@@ -12,12 +12,13 @@ export default function ChatList( {navigation} ) {
   useEffect(() => {
     getAsyncItem("current user").then(async user => {
       setCurrentUser(user)
-  })
-    getMentees(currentUser.username).then(results => {
-      console.log(results)
-      setMentees(results)
-      setSearchMentees(results)
-    })}, []);
+
+      getMentees(user.user_id).then(results => {
+        setMentees(results)
+        setSearchMentees(results)
+      })
+    })
+  }, []);
 
   const searchQueryMentees = (query) => {
     if (query == ''){
@@ -27,7 +28,8 @@ export default function ChatList( {navigation} ) {
       getMentees(username).then(mentees => {
         let queryMentees = []
         for (let mentee of mentees ){
-          if (mentee.name.toLowerCase().includes(query.toLowerCase())){
+          let fullName = mentee.first_name + ' ' + mentee.last_name
+          if (fullName.toLowerCase().includes(query.toLowerCase())){
             queryMentees.push(mentee)
           }
         }
@@ -39,9 +41,9 @@ export default function ChatList( {navigation} ) {
   const ChatItem = ({mentee}) => (
     <View style={styles.homescreenmenteelist}>
       <Pressable style={styles.homescreenmentee}
-                 onPress={() => navigation.navigate("Chat Room", {screenname: mentee.name, username: username, mentee: mentee})}>
+                 onPress={() => navigation.navigate("Chat Room", {screenname: mentee.name, mentee: mentee})}>
         <View style={styles.homescreenmentee}>
-          <Text>{mentee.name}</Text>
+          <Text>{mentee.first_name} {mentee.last_name}</Text>
         </View>
       </Pressable>
     </View>
