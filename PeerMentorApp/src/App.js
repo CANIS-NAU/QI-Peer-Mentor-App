@@ -8,17 +8,23 @@ import {styles} from './stylesheet';
 
 import ChangeEmail from './Screens/ChangeEmail';
 import ChangePassword from './Screens/ChangePassword';
+import ChangeUsername from './Screens/ChangePassword';
 
 import Chat from './Screens/Chat';
 import ChatRoom from './Screens/ChatRoom';
+import ChatLog from './Screens/ChatLog';
 
 import CreateAccount from './Screens/CreateAccount';
 import ForgotPassword from './Screens/ForgotPassword';
 
 import Login from './Screens/Login';
 import Home from './Screens/Home';
-import MenteeProfile from './Screens/MenteeProfile';
 import Profile from './Screens/Profile';
+
+import MenteeProfile from './Screens/MenteeProfile';
+import MentorProfile from './Screens/MentorProfile';
+import UnassignedMentees from './Components/UnassignedMenteesList';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -41,7 +47,11 @@ function HomeStack() {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Mentee Profile" component ={MenteeProfile}
                   options={({route}) => ({ title: route.params.screenname})}/>
+        <Stack.Screen name="Mentor Profile" component ={MentorProfile}
+                  options={({route}) => ({ title: route.params.screenname})}/>
         <Stack.Screen name="Chat Room" component = {ChatRoom} options={({route}) => ({ title: route.params.screenname})}/>
+        <Stack.Screen name="Chat Log" component = {ChatLog} options={({route}) => ({ title: route.params.screenname})}/>
+        <Stack.Screen name="Assign Mentees" component = {UnassignedMentees} options={({route}) => ({ title: route.params.screenname})}/>
       </Stack.Navigator>
   )};
 export {HomeStack};
@@ -52,6 +62,7 @@ function ProfileStack() {
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Change Email" component={ChangeEmail} />
         <Stack.Screen name="Change Password" component={ChangePassword} />
+        <Stack.Screen name="Change Username" component={ChangeUsername} />
       </Stack.Navigator>
   )};
 export {ProfileStack};
